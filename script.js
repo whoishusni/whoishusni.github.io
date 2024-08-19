@@ -1,26 +1,32 @@
-// Set the date we're counting down to
-const countdownDate = new Date("August 31, 2024 23:59:59").getTime();
+document.addEventListener('DOMContentLoaded', function () {
+    const output = document.getElementById('terminal-output');
+    const cursor = document.getElementById('cursor');
 
-// Update the countdown every 1 second
-const x = setInterval(function() {
-    // Get the current date and time
-    const now = new Date().getTime();
-    
-    // Calculate the time remaining
-    const distance = countdownDate - now;
-    
-    // Calculate days, hours, minutes, and seconds
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Display the result
-    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    
-    // If the countdown is finished, display a message
-    if (distance < 0) {
-        clearInterval(x);
-        document.querySelector(".terminal-content").innerHTML = "<pre><b>System Message:</b>\n<b>----------------</b>\n<b>🚀 We Are Back! 🚀</b>\n\nThank you for your patience.</pre>";
+    // Text to be typed
+    const texts = ['Website Is Still Under Construction...\nThanks For Visiting My Personal Website\nStay Tune...\n\n\n\nBest Regards\nHusni'];
+    let textIndex = 0;
+    let charIndex = 0;
+
+    // Function to simulate typing effect
+    function typeText() {
+        if (textIndex < texts.length) {
+            // Type the current text
+            if (charIndex < texts[textIndex].length) {
+                output.textContent += texts[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 30); // Adjust typing speed here
+            } else {
+                // Move to the next text after a delay
+                setTimeout(() => {
+                    output.textContent = ''; // Clear text for repeat effect
+                    charIndex = 0;
+                    textIndex = (textIndex + 1) % texts.length; // Move to the next text
+                    typeText(); // Restart typing effect
+                }, 4000); // Time before restarting the typing animation
+            }
+        }
     }
-}, 1000);
+
+    // Start typing effect
+    typeText();
+});

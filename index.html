@@ -3,31 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
+    <title>Under Construction</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="terminal">
-        <div class="terminal-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+        <div class="header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
         </div>
-        <div class="terminal-content">
-            <pre>
-<b>System Message:</b>
-<b>----------------</b>
-<b>⚠️ Under Maintenance ⚠️</b>
-
-My website is currently undergoing scheduled maintenance.
-I’ll be back online shortly. Thank you for your patience.
-
-<b>Time Remaining:</b>
-<b id="countdown"></b>
-
-<b>Thanks For Your Patience</b>
-<!-- <b>Contact us at <a href="mailto:support@example.com">support@example.com</a></b> -->
-            </pre>
+        <div class="content">
+            <pre id="terminal-output" class="terminal-output"></pre>
+            <div id="cursor" class="cursor">|</div>
+            <div id="loop-indicator" class="loop-indicator"></div>
         </div>
     </div>
     <script src="script.js"></script>
