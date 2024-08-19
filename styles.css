@@ -1,24 +1,35 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
     text-align: center;
 }
 
 .container {
-    max-width: 600px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.error-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
 }
 
 .error-code {
     font-size: 120px;
     margin: 0;
+    color: #e74c3c;
+    font-weight: bold;
 }
 
 .error-message {
@@ -31,39 +42,24 @@ body {
     margin-bottom: 20px;
 }
 
-.link {
+.home-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
-    color: #007bff;
+    color: #fff;
+    background: #3498db;
     text-decoration: none;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    margin: 5px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
-.link:hover {
-    background-color: #007bff;
-    color: #fff;
+.home-link:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
 }
 
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #28a745;
-    color: #fff;
-    margin-top: 10px;
-}
-
-.search-input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
-    width: calc(100% - 22px);
-    max-width: 300px;
+.home-link:active {
+    transform: translateY(1px);
 }
